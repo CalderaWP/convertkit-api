@@ -51,7 +51,7 @@ class forms extends base implements the_interface{
 	 * @return object|string
 	 */
 	public function add( $id, array $args ){
-		return $this->make_request( sprintf('forms/%d/subscribe', $id ), 'POST', $args);
+		return $this->make_request( sprintf('forms/%d/subscribe', $id ), 'POST', $args );
 	}
 
 	/**
