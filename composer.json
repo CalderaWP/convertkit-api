@@ -4,7 +4,6 @@
     "keywords": [
         "wordpress"
     ],
-    "minimum-stability": "dev",
     "license": "GPL-2.0+",
     "authors": [
         {
