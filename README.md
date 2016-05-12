@@ -17,6 +17,7 @@ Requires PHP 5.3 or later.
 ## Get all sequences:
 ```
     use calderawp\convertKit\sequences;
+    
 	$client = new sequences( $api_key );
 	$sequences = $client->get_all();
 ```
@@ -24,6 +25,9 @@ Requires PHP 5.3 or later.
 ## Add a subscriber to a form:
 
 ```
+    use calderawp\convertKit\forms
+    
+    
     $name = 'Hi Roy';
     $client = new forms( $api_key );
     $form = $client->get( $name );
@@ -37,6 +41,8 @@ Requires PHP 5.3 or later.
 ## Add a subscriber to a sequence:
 
 ```
+    use calderawp\convertKit\sequences;
+    
     $name = 'Hi Roy';
     $client = new forms( $api_key );
     $sequence = $client->get( $name );
