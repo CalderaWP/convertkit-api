@@ -3,6 +3,9 @@ WordPress API client for ConvertKit API v3
 
 Requires PHP 5.3 or later.
 
+# Installation
+
+`composer require calderawp/convertkit-api`
 
 # Examples
 
