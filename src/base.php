@@ -31,6 +31,13 @@ abstract class base {
 	 */
 	protected $api_url_base = 'https://api.convertkit.com/';
 
+	/**
+	 * Last response returned by WordPress HTTP API
+	 *
+	 * @var array|\WP_Error
+	 */
+	protected $last_response;
+
 
 	/**
 	 * Constructor
@@ -58,6 +65,7 @@ abstract class base {
 		$url = $this->build_request_url($request, $args);
 		$results = wp_remote_request( $url, array( 'method' => $method ) );
 
+		$this->last_response = $results;
 		if( ! is_wp_error( $results ) ) {
 			if( 200 == wp_remote_retrieve_response_code( $results ) ) {
 				$results = wp_remote_retrieve_body( $results );
@@ -129,5 +137,16 @@ abstract class base {
 
 		return false;
 
+	}
+
+	/**
+	 * Get the last response returned by WordPress HTTP API
+	 *
+	 * @since 0.1.0
+	 *
+	 * @return array|\WP_Error
+	 */
+	public function get_last_response(){
+		return $this->last_response;
 	}
 }
