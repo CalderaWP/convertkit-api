@@ -64,7 +64,13 @@ abstract class base {
 				return json_decode( $results );
 			}else{
 				$body = wp_remote_retrieve_body( $results );
-				if( isset( $body['message'])){
+				if( is_string( $body ) && is_object( $json = json_decode( $body ) ) ){
+					$body = (array) $json;
+				}
+
+				if( isset( $body['error'] ) && ! empty( $body[ 'error' ] ) ){
+					return $body[ 'error' ];
+				}elseif( isset( $body['message'] ) && ! empty( $body[ 'message' ] ) ){
 					return $body[ 'message' ];
 				}else{
 					return wp_remote_retrieve_response_code( $results );
