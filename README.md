@@ -1,6 +1,8 @@
 # ConvertKit API
 WordPress API client for ConvertKit API v3
 
+This library was developed for use in our [ConvertKit for Caldera Forms plugin](https://calderawp.com/downloads/convertkit-caldera-forms/). It is provided here for other developers to use to build their own intergrations.
+
 Requires PHP 5.3 or later.
 
 # Installation
