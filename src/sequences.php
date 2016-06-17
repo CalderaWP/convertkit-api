@@ -51,7 +51,7 @@ class sequences extends base implements the_interface {
 	 * @return object|string
 	 */
 	public function add( $id, array $args ){
-		return $this->make_request( sprintf('forms/%s/subscribe', $id ), 'POST', $args);
+		return $this->make_request( sprintf('courses/%s/subscribe', $id ), 'POST', $args);
 	}
 
 	/**
@@ -64,7 +64,7 @@ class sequences extends base implements the_interface {
 	 * @return object|string
 	 */
 	public function subscribers( $id ) {
-		return $this->make_request( sprintf( '/v3/sequences/%s/subscriptions', $id ) );
+		return $this->make_request( sprintf( '/courses/%s/subscriptions', $id ) );
 	}
 
 	/**
@@ -78,7 +78,7 @@ class sequences extends base implements the_interface {
 	 * @return object|string
 	 */
 	public function remove( $id, $email ){
-		return $this->make_request(sprintf( 'forms/%s/unsubscribe', $id ), 'POST', array( 'email' => $email ) );
+		return $this->make_request(sprintf( 'courses/%s/unsubscribe', $id ), 'POST', array( 'email' => $email ) );
 	}
 
 
