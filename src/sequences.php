@@ -64,7 +64,7 @@ class sequences extends base implements the_interface {
 	 * @return object|string
 	 */
 	public function subscribers( $id ) {
-		return $this->make_request( sprintf( '/courses/%s/subscriptions', $id ) );
+		return $this->make_request( sprintf( 'courses/%s/subscriptions', $id ) );
 	}
 
 	/**
