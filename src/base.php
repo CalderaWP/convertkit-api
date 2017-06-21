@@ -38,6 +38,10 @@ abstract class base {
 	 */
 	protected $last_response;
 
+	/**
+	 * @var string
+	 */
+	protected $secret_key;
 
 	/**
 	 * Constructor
@@ -46,8 +50,9 @@ abstract class base {
 	 *
 	 * @param String $api_key ConvertKit API Key
 	 */
-	public function __construct($api_key) {
+	public function __construct($api_key, $secret = '' ) {
 		$this->api_key = $api_key;
+		$this->secret_key = $secret;
 	}
 
 	/**
@@ -99,7 +104,12 @@ abstract class base {
 	 * @return array        Request arguments
 	 */
 	public function filter_request_arguments($args = array()) {
-		return array_merge($args, array('api_key' => $this->api_key ) );
+		$args = array_merge($args, array('api_key' => $this->api_key ) );
+		if( ! empty( $this->secret_key ) ){
+			$args[ 'api_secret' ] = $this->secret_key;
+		}
+
+		return $args;
 	}
 
 	/**
