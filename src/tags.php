@@ -79,7 +79,7 @@ class tags extends base {
 	 * @return object|string
 	 */
 	public function unsubscribe( $tag_id, $subscriber_id ){
-		return $this->make_request( sprintf( 'subscribers/%d/tags/%s', $tag_id, $subscriber_id ), 'DELETE' );
+		return $this->make_request( sprintf( 'subscribers/%d/tags/%s', $subscriber_id, $tag_id ), 'DELETE' );
 	}
 
 }
