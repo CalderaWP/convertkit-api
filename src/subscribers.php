@@ -54,7 +54,7 @@ class subscribers extends base{
 	 * @return object|string
 	 */
 	public function update( $id, array $args ){
-		return $this->make_request( '/subscribers/' . $id, 'POST', $args );
+		return $this->make_request( '/subscribers/' . $id, 'PUT', $args );
 	}
 
 }
